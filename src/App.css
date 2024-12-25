@@ -1,0 +1,357 @@
+*{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  font-family: "Poppins", serif !important;
+}
+body{
+  background: #1E201E !important;
+  overflow-x: hidden;
+} 
+.gap{
+  width: 100%;
+  height: 50px;
+}
+.bars{
+  display: none;
+}
+header{
+  width: 100%;
+  padding: 1.4rem 2rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s ease-in;
+  z-index: 1;
+}
+header .box{
+  opacity: 0.5;
+}
+header .box:nth-child(1){
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  top: 20px;
+  left: 90%;
+  background: var(--primary-color);
+  opacity: 0.3;
+}
+:root{
+  --text-color:#d6d4d4;
+  --primary-color:#FF0099;
+  --bg-color:#1E201E;
+}
+p{
+  color: var(--text-color);
+}
+header h1{
+  color: #fff;
+  animation: heading 0.5s ease-in;
+}
+header ul{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+header ul li a{
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 0.5rem 0.5rem;
+  position: relative;
+  margin: 0 0.5rem;
+  display: block;
+  opacity: 0;
+  animation: links 0.5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+header ul li a::before{
+  content: '';
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: 0.3s transform;
+}
+header ul li a:hover::before{
+  transform: scaleX(1);
+}
+.hire-me{
+  background: #FF0099;
+  border-radius: 20px;
+  padding: 0.3rem 1.7rem;
+  outline:none;
+  border: none;
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+.hire-me:hover{
+  background-color: #ff00999b;
+} 
+.left .designation{
+  color: #FF0099;
+}
+.about-me{
+  /* width: 100%; */
+  padding: 1.4rem 0;
+}
+.about-me .left{
+  animation: left 0.4s ease-in forwards;
+}
+.about-me .right{
+  animation: right 0.4s ease-in forwards;
+}
+.right .circle{
+  overflow: hidden;
+  z-index: -1;
+  background: #FF0099;
+  background-image: linear-gradient(45deg, #3023AE 0%, #FF0099 100%);
+  border-radius: 37% 63% 38% 62% / 44% 33% 67% 56% ;
+  width:500px;
+  position: relative;
+  height: 500px;
+  opacity: 0.8;
+}
+.box{
+  border-radius: 37% 63% 38% 62% / 44% 33% 67% 56%;
+  background: #FF0099;
+    background-image: linear-gradient(45deg, #3023AE 0%, #FF0099 100%);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  z-index: -1;
+  opacity: 0.7;
+}
+.right .circle img{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card{
+  background: none !important;
+  border: none !important;
+}
+.card .card-img-top{
+  width: 100px;
+}
+.about-me{
+  animation: banner 1s ease;
+}
+.contact-me{
+  padding: 2.3rem 0;
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+.contact-me .content .text-fields form .fields input,textarea{
+background: #333333;
+outline: none;
+border: none;
+margin: 10px 0;
+padding: 0.8rem 0 0.8rem 1.3rem;
+border-radius: 20px;
+width: 100%;
+color:#fff ;
+}
+.contact-me .content .text-fields form button{
+  float: left;
+}
+.about_my_resume .actual-content span{
+  color: var(--primary-color);
+}
+.about_my_resume .actual-content ul li li{
+  color: var(--text-color);
+}
+.about_my_resume .content button{
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.about_my_resume .content{
+  position: relative;
+}
+.about_my_resume .content .box:nth-child(1){
+  left: -250px;
+  top: 50px;
+  transform: rotate(50deg);
+  width: 500px;
+  height: 60px;
+  border-radius: 20px;
+  opacity: 0.3;
+}
+.about_my_resume .content .resume_heading{
+  transform: translateY(-80px);
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
+.about_my_resume.active .content .resume_heading{
+  transform: translateY(0);
+  opacity: 1;
+}
+.about_my_resume .content .actual-content .information li{
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.4s ease-in;
+  transition-delay: calc(.2s * var(--i));
+}
+.about_my_resume.active .content .actual-content .information li{
+  transform: translateX(0);
+  opacity: 1;
+}
+.about_my_resume .content .actual-content .skills li{
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.4s ease-in;
+  transition-delay: calc(0.1s * var(--i));
+}
+.about_my_resume.active .content .actual-content .skills li{
+  transform: translateX(0);
+  opacity: 1;
+}
+.about_my_resume .content .box:nth-child(2){
+  left: 1000px;
+  top: 100px;
+  transform: rotate(-40deg);
+ width: 500px;
+ height: 500px;
+ opacity: 0.3;
+}
+.services,
+.about_my_resume
+{
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+.services.active,
+.contact-me.active,
+.about_my_resume.active
+{
+  opacity: 1;
+}
+.services .whatsapp_me{
+  display: block;
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: .8s ease-in;
+}
+.about_my_resume .resume{
+  display: block;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: .4s ease-in;
+}
+.about_my_resume.active .resume{
+  transform: translateY(0);
+  opacity: 1;
+}
+.services.active .whatsapp_me{
+  transform: translateY(0);
+  opacity: 1;
+}
+.services h1{
+  transform: translateX(150px);
+  opacity: 0;
+  transition: 0.5s ease-in;
+}
+.services.active h1{
+  opacity: 1;
+  transform: translateX(0);
+}
+.services .service-desc{
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: .5s ease-in;
+}
+.services.active .service-desc{
+  transform: translateX(0);
+  opacity: 1;
+}
+.services .content .cards .card{
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 0.4s ease-in;
+  transition-delay: calc(.2s * var(--i));
+}
+.services.active .content .cards .card{
+  transform: translateY(0);
+  opacity: 1;
+}
+@media only screen and (max-width:780px){
+  header ul{
+    display: none;
+  }
+  header ul .bars{
+    display: initial !important;
+  }
+}
+@media only screen and (max-width:710px) {
+  .right .circle{
+    margin-top: 30px;
+    width: 400px;
+    height: 400px;
+  }
+  .right .circle::after{
+    display: none;
+  }
+}
+@media only screen and (max-width:455px) {
+  .right .circle{
+    width: 320px;
+    height: 400px;
+  }
+}
+@keyframes heading{
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes links {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes banner {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes left {
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: 0.4s ease-in;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes right {
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: 0.4s ease-in;
+  }
+  100%{
+    opacity: 1;
+  }
+}
