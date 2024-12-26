@@ -1,19 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import Form from '../components/Form'
-import { useLocation } from 'react-router-dom'
+import Skills from '../components/Skills'
 
 const Home = () => {
     const number = import.meta.env.VITE_MY_NUM;
     const message = import.meta.env.VITE_MY_MSG;
   return (<>
       <section className='about-me d-flex justify-content-center' id='about-me'>
-      {/* <video autoPlay muted>
-        <source src='/goku_live.mp4' type='video/mp4'></source>
-        Your browser does not support the video tag.
-      </video> */}
-      {/* <div className='overlay'></div> */}
+        <div className='overlay'></div>
         <div className='content container row align-items-center text-secondary'>
     <div className='gap'></div>
     <div className='gap'></div>
@@ -21,21 +17,20 @@ const Home = () => {
                 <h1 className='text-white text-uppercase fw-light'>i am a <span className='fw-bold designation'>software engineer</span></h1>
                 <p className='my-4 fw-light'>Versatile and motivated full-stack developer with a strong foundation in Python, Data Structures and
 Algorithms, and extensive experience in MERN stack, React.js, and JavaScript. Proficient in backend
-technologies including PHP, Laravel, ASP.NET Core, C#, SQL, and MySQL. Seeking a challenging
-position where I can leverage my technical skills in full-stack development and contribute to innovative
-projects that drive organizational success."</p>
+technologies including PHP, Laravel, ASP.NET Core, C#, SQL, and MySQL.</p>
                 <a href={`https://wa.me/${number}?Text=${message}`} target='_blank' className='mx-3'>
                     <Button>Whatsapp Me</Button>
                 </a>
             </div>
             <div className='col-lg-1'></div> 
-             <div className='right col-lg-4'>
+             <div className='right col-lg-4 col-md-4 col-sm-8'>
                 <div className='circle'>
                 <img src='rose2.png' height={500} />
                 </div>
             </div>
         </div>
     </section>
+    <Skills />
     <section className='services my-3 py-5' id='service'>
         <div className='content container text-center'>
         <div className='gap'></div>

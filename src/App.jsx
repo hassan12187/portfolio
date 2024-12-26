@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useLocation, useNavigation } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home";
@@ -12,6 +12,7 @@ function App() {
       header.style.backdropFilter="blur(10px)";
     }else{
       document.querySelector('header').style.backdropFilter='none';
+
     }
     sections.forEach((val) => {
       if(window.scrollY >= val.offsetTop - 180){

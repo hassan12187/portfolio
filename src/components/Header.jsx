@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 export const Header = ()=>{
     return (<>
-            <header>
+            <header className="header">
         <div className="box"></div>
             <div>
             <h1>Muhammad Hassan</h1>
