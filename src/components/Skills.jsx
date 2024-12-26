@@ -5,6 +5,7 @@ const Skills = () => {
   return (
       <section className="skills_section">
     <div className="gap"></div>
+    <div className="gap"></div>
         <div className="background_box"></div>
       <div className="content container text-center py-4">
         <h1>SKILLS</h1>
