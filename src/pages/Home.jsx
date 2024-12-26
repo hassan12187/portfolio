@@ -8,7 +8,12 @@ const Home = () => {
     const number = import.meta.env.VITE_MY_NUM;
     const message = import.meta.env.VITE_MY_MSG;
   return (<>
-      <section className='about-me d-flex justify-content-center my-3' id='about-me'>
+      <section className='about-me d-flex justify-content-center' id='about-me'>
+      {/* <video autoPlay muted>
+        <source src='/goku_live.mp4' type='video/mp4'></source>
+        Your browser does not support the video tag.
+      </video> */}
+      {/* <div className='overlay'></div> */}
         <div className='content container row align-items-center text-secondary'>
     <div className='gap'></div>
     <div className='gap'></div>
@@ -23,8 +28,8 @@ projects that drive organizational success."</p>
                     <Button>Whatsapp Me</Button>
                 </a>
             </div>
-            <div className='col-lg-1'></div>
-            <div className='right col-lg-4'>
+            <div className='col-lg-1'></div> 
+             <div className='right col-lg-4'>
                 <div className='circle'>
                 <img src='rose2.png' height={500} />
                 </div>
