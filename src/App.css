@@ -57,6 +57,9 @@ header ul{
   align-items: center;
   gap: 0.8rem;
 }
+section.active{
+  opacity: 1;
+}
 header ul li a{
   color: var(--text-color);
   font-weight: 600;
