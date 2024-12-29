@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll(".section");
     const header = document.querySelector("header");
 
     const handleScroll = () => {
@@ -20,10 +20,8 @@ function App() {
 
       // Add active class to sections in view
       sections.forEach((section) => {
-        if (window.scrollY >= section.offsetTop - 180) {
+        if (window.scrollY >= section.offsetTop - 110) {
           section.classList.add("active");
-        } else {
-          section.classList.remove("active");
         }
       });
     };

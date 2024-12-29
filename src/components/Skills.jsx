@@ -3,13 +3,12 @@ import SkillsCard from "./SkillsCard";
 
 const Skills = () => {
   return (
-      <section className="skills_section">
-    <div className="gap"></div>
+      <section className="skills_section section">
     <div className="gap"></div>
         <div className="background_box"></div>
-      <div className="content container text-center py-4">
+      <div className="content container text-center py-4 text-white">
         <h1>SKILLS</h1>
-        <div className="cards row justify-content-center gap-5">
+        <div className="cards px-3 row justify-content-center gap-5">
           <SkillsCard
             title={"Back-end developer"}
             desc={
@@ -19,11 +18,11 @@ const Skills = () => {
             i={1}
           >
             <li>
-              <span>Languages:</span>
+              <span className="card_title fw-bold">Languages:</span>
             </li>
             <li>PHP,Python,ASP.NET Core,Nodejs/Expressjs</li>
             <li>
-              <span>My Tools:</span>
+              <span className="card_title fw-bold">My Tools:</span>
             </li>
             <li>MySql</li>
             <li>Sql</li>
@@ -38,11 +37,11 @@ const Skills = () => {
             i={2}
           >
             <li>
-              <span>Technologies Stack:</span>
+              <span className="card_title fw-bold">Technologies Stack:</span>
             </li>
             <li>HTML,JavaScript,CSS</li>
             <li>
-              <span>My Tools:</span>
+              <span className="card_title fw-bold">My Tools:</span>
             </li>
             <li>Bootstrap</li>
             <li>AJAX</li>

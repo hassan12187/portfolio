@@ -65,7 +65,7 @@ const Form = () => {
         <div className="fields">
           <textarea
             placeholder="Message"
-            className="my-2"
+            className="my-2 message"
             onChange={handleInputChange}
             value={userVal.message}
             name="message"

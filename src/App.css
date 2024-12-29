@@ -5,6 +5,7 @@
   box-sizing: border-box;
   text-decoration: none !important;
   font-family: "Poppins", serif !important;
+  overflow-x: hidden;
 }
 body{
   background: #1E201E !important;
@@ -14,22 +15,24 @@ body{
   width: 100%;
   height: 50px;
 }
-.bars{
-  display: none;
+.section{
+  opacity: 0;
+  width: 100%;
+}
+.section.active{
+  opacity: 1;
 }
 header{
   width: 100%;
   padding: 1.4rem 2rem;
   position: fixed;
   top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   transition: 0.5s ease-in;
   z-index: 1;
 }
 header .box{
   opacity: 0.5;
+  /* position: absolute; */
 }
 header .box:nth-child(1){
   width: 80px;
@@ -56,9 +59,6 @@ header ul{
   display: flex;
   align-items: center;
   gap: 0.8rem;
-}
-section.active{
-  opacity: 1;
 }
 header ul li a{
   color: var(--text-color);
@@ -87,7 +87,6 @@ header ul li a::before{
 header ul li a:hover::before{
   transform: scaleX(1);
 }
-
 .hire-me{
   background: #FF0099;
   border-radius: 20px;
@@ -104,10 +103,9 @@ header ul li a:hover::before{
   color: var(--primary-color);
 }
 .about-me{
-  /* width: 100%; */
   padding: 1.4rem 0;
-  height: 100vh;
    position: relative;
+   animation: banner 0.4s ease-in;
 }
 .about-me .left{
   animation: left 0.4s ease-in forwards;
@@ -121,11 +119,17 @@ header ul li a:hover::before{
   background: #FF0099;
   background-image: linear-gradient(45deg, #3023AE 0%, #FF0099 100%);
   border-radius: 37% 63% 38% 62% / 44% 33% 67% 56% ;
-  width:500px;
+  width:100%;
   position: relative;
-  height: 500px;
+  height: 500px;  
   opacity: 0.8;
   transition: 0.2s ease-in-out;
+}
+.right:hover .circle{
+  box-shadow: 0 0 20px var(--primary-color) !important;
+}
+.right .circle img{
+  height: 100%;
 }
 .right .circle:hover{
   box-shadow: 0 0 50px #FF0099;
@@ -142,264 +146,129 @@ header ul li a:hover::before{
   z-index: -1;
   opacity: 0.7;
 }
-.right .circle img{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.card{
-  background: none !important;
-  border: none !important;
-}
-.card .card-img-top{
-  width: 100px;
-}
-.about-me{
-  animation: banner 1s ease;
-}
-.contact-me{
-  padding: 2.3rem 0;
-  opacity: 0;
-  transition: 0.3s ease-in;
-}
-.contact-me .content .text-fields form .fields input,textarea{
-background: #333333;
-outline: none;
-border: none;
-margin: 10px 0;
-padding: 0.8rem 0 0.8rem 1.3rem;
-border-radius: 20px;
-width: 100%;
-color:#fff ;
-}
-.contact-me .content .text-fields form button{
-  float: left;
-}
-.about_my_resume .actual-content span{
-  color: var(--primary-color);
-}
-.about_my_resume .actual-content ul li li{
-  color: var(--text-color);
-}
-.about_my_resume .content button{
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-.about_my_resume .content{
-  position: relative;
-}
-.about_my_resume .content .box:nth-child(1){
-  left: -250px;
-  top: 50px;
-  transform: rotate(50deg);
-  width: 500px;
-  height: 60px;
-  border-radius: 20px;
-  opacity: 0.3;
-}
-.about_my_resume .content .resume_heading{
-  transform: translateY(-80px);
-  transition: 0.4s ease-in-out;
-  opacity: 0;
-}
-.about_my_resume.active .content .resume_heading{
-  transform: translateY(0);
-  opacity: 1;
-}
-.about_my_resume .content .actual-content .information li{
-  transform: translateX(100px);
-  opacity: 0;
-  transition: 0.4s ease-in;
-  transition-delay: calc(.2s * var(--i));
-}
-.about_my_resume.active .content .actual-content .information li{
-  transform: translateX(0);
-  opacity: 1;
-}
-.about_my_resume .content .actual-content .skills li{
-  transform: translateX(100px);
-  opacity: 0;
-  transition: 0.4s ease-in;
-  transition-delay: calc(0.1s * var(--i));
-}
-.about_my_resume.active .content .actual-content .skills li{
-  transform: translateX(0);
-  opacity: 1;
-}
-.about_my_resume .content .box:nth-child(2){
-  left: 1000px;
-  top: 100px;
-  transform: rotate(-40deg);
- width: 500px;
- height: 500px;
- opacity: 0.3;
-}
-.services,
-.about_my_resume
-{
-  opacity: 0;
-  transition: 0.3s ease-in;
-}
-.services.active,
-.contact-me.active,
-.about_my_resume.active
-{
-  opacity: 1;
-}
-.services .whatsapp_me{
-  display: block;
-  transform: translateY(-100px);
-  opacity: 0;
-  transition: .8s ease-in;
-}
-.about_my_resume .resume{
-  display: block;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: .4s ease-in;
-}
-.about_my_resume.active .resume{
-  transform: translateY(0);
-  opacity: 1;
-}
-.services.active .whatsapp_me{
-  transform: translateY(0);
-  opacity: 1;
-}
-.services h1{
-  transform: translateX(150px);
-  opacity: 0;
-  transition: 0.5s ease-in;
-}
-.services.active h1{
-  opacity: 1;
-  transform: translateX(0);
-}
-.services .service-desc{
-  transform: translateX(-150px);
-  opacity: 0;
-  transition: .5s ease-in;
-}
-.services.active .service-desc{
-  transform: translateX(0);
-  opacity: 1;
-}
-.services .content .cards .card{
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 0.4s ease-in;
-  transition-delay: calc(.2s * var(--i));
-}
-.services.active .content .cards .card{
-  transform: translateY(0);
-  opacity: 1;
-}
 .skills_section{
-  width: 100%;
   position: relative;
-  transition: 0.3s ease-in;
-  opacity: 0;
 }
 .skills_section .background_box{
   position: absolute;
-  width: 80%;
-  height: 30vh;
-  z-index:-1;
+  height: 20vh;
+  width: 100%;
   background: #FF0099;
-    background-image: linear-gradient(45deg, #3023AE 0%, #FF0099 100%);
-    left: 50%;
-    transform: translateX(-50%);
+  background-image: linear-gradient(45deg, #3023AE 0%, #FF0099 100%);
+  z-index: -1;
 }
-.skills_section .content .cards{
-  margin-top: 2rem;
+.card_title{
+  color: #FF0099;
 }
-.skills_section .content h1{
-  color: #fff;
-  font-weight: 700;
-}
-.skills_section .content .cards .my_card{
-  background-color: #1E201E;
-  box-shadow: 0 0 8px #4a4a4a6c;
-  color: #fff;
-  border-radius: 8px;
-  transform: translateY(-100px);
-  transition: 0.4s ease;
-  transition-delay: calc(0.2s * var(--i));
+.my_card{
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  box-shadow: 0 0 8px #FF0099;
+  transform: translateX(-100px);
   opacity: 0;
 }
-.skills_section .content .cards .my_card h5{
-  color: var(--primary-color);
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.skills_section .content .cards .my_card ul li span{
-  color: var(--primary-color);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.skills_section .content .cards .my_card ul li{
-  font-weight: 200;
-}
-.skills_section .content .cards .my_card img{
-  width: 80px;
-  margin: 1rem 0;
-}
-.skills_section .content .cards .my_card ul{
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-.skills_section.active{
+.skills_section.active .my_card{
+  transform: translateX(0);
+  transition: 0.4s ease-in-out;
+  transition-delay: calc(.2s * var(--i));
   opacity: 1;
 }
-.skills_section.active .content .cards .my_card{
-  transform: translateY(0);
+.services .card{
+  transform: translateX(-100px);
+  opacity: 0;
+}
+.services.active .card{
+  transform: translateX(0);
+  transition: 0.4s ease-in-out;
+  transition-delay: calc(.2s * var(--i));
   opacity: 1;
 }
-@media only screen and (max-width:780px){
-  header ul{
-    display: none;
-  }
-  header ul .bars{
-    display: initial !important;
+.my_card img{
+  width: 70px;
+}
+.card{
+  background: var(--bg-color) !important;
+  border: none !important;
+  outline: none;
+}
+.card .card-img-top{
+  width: 90px;
+}
+.about_my_resume .information span,
+.about_my_resume .skills span
+{
+  color: var(--primary-color);
+}
+.about_my_resume .skills li{
+  color: var(--text-color);
+}
+.about_my_resume .resume{
+  display: block;
+  margin-left: 60%;
+  transform:translateX(-60%);
+}
+.about_my_resume .actual-content .information li,
+.about_my_resume .actual-content .skills li{
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.about_my_resume.active .actual-content .information li,
+.about_my_resume.active .actual-content .skills li{
+  transform: translateX(0);
+  transition: 0.4s ease-in-out;
+  transition-delay: calc(.2s * var(--i));
+  opacity: 1;
+}
+.contact-me{
+  height: 100vh;
+  width: 100%;
+}
+.contact-me .text-fields .fields{
+  margin: 15px 0;
+  height: 50px;
+}
+.contact-me .content .text-fields .fields input,
+.contact-me .content .text-fields .fields .message
+{
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background-color:rgb(59, 58, 58) ;
+  padding:0.5rem 1rem;
+}
+.contact-me .content .text-fields .fields .message{
+  border-radius: 10px;
+  height: 70px;
+}
+.contact-me .content .text-fields .fields input::placeholder{
+  color: var(--text-color);
+}
+.contact-me .content button{
+  margin-top: 1.5rem;
+}
+.contact-me .text-fields{
+  transform: translateX(-100px);
+  transition: 0.4s ease-in;
+}
+.contact-me .map{
+  transform: translateX(100px);
+  transition: 0.4s ease-in;
+}
+.contact-me.active .text-fields{
+  transform: translateX(0);
+}
+.contact-me.active .map{
+  transform: translateX(0);
+}
+@media screen and (max-width:395px) {
+  header .content ul{
+    display: none !important;
   }
 }
-@media only screen and (max-width:710px) {
-  .right .circle{
-    margin-top: 30px;
-    width: 400px;
-    height: 400px;
-  }
-  .right .circle::after{
-    display: none;
-  }
-}
-@media only screen and (max-width:455px) {
-  .right .circle{
-    width: 320px;
-    height: 400px;
-  }
-}
-@keyframes heading{
-  0%{
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100%{
-    opacity: 1;
-  }
-}
-@keyframes links {
-  0%{
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100%{
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes banner {
+@keyframes banner{
   0%{
     opacity: 0;
   }
@@ -409,21 +278,26 @@ color:#fff ;
 }
 @keyframes left {
   0%{
-    opacity: 0;
     transform: translateX(-100px);
-    transition: 0.4s ease-in;
   }
   100%{
-    opacity: 1;
+    transform: translateX(0);
   }
 }
 @keyframes right {
   0%{
-    opacity: 0;
     transform: translateX(100px);
-    transition: 0.4s ease-in;
   }
   100%{
+    transform: translateX(0);
+  }
+}
+@keyframes links {
+  0%{
+    transform: translateY(100px);
+  }
+  100%{
+    transform: translateY(0);
     opacity: 1;
   }
 }
